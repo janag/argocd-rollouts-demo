@@ -20,10 +20,10 @@ spec:
           sum(irate(istio_requests_total{
             reporter="source",
             destination_service=~"{{args.service}}.{{args.namespace}}.svc.cluster.local",
-            response_code!~"5.*"}[10s])
+            response_code!~"5.*"}[20s])
           )
           /
           sum(irate(istio_requests_total{
             reporter="source",
-            destination_service=~"{{args.service}}.{{args.namespace}}.svc.cluster.local"}[10s])
+            destination_service=~"{{args.service}}.{{args.namespace}}.svc.cluster.local"}[20s])
           )
